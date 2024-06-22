@@ -1,0 +1,136 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import "../css/styles.css";
+import Header from "../components/Header.astro";
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description = "A community of creatives building value on the Ethereum ecosystem",
+  image = "/images/band.jpg",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="og:image" content={image} />
+
+    <!--Swap our for actual link-->
+    <link rel="canonical" href="https://www.website.com/" />
+
+    <meta name="description" content={description} />
+    <meta name="keywords" content="" />
+
+    <!--Social Media Display-->
+    <meta
+      property="og:title"
+      content="Title that shows up on google searches"
+    />
+    <meta property="og:description" content="Meta description for the page" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="Official link for that page (https://www.site.com)"
+    />
+    <meta property="og:image" content="/assets/images/social.jpg" />
+    <meta property="og:image:secure_url" content="/assets/images/social.jpg" />
+
+    <!--Favicons-->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicons/favicon-32x32.png?v1"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body class="min-h-screen">
+    <Header />
+    <slot />
+  </body>
+  
+  <style lang="scss" is:global>
+    @import "../styles/base/_button.scss";
+
+    .linkText {
+      transition:
+        background 0.15s ease-out,
+        transform 0.1s ease-out,
+        box-shadow 0.15s ease-out;
+        position: relative;
+        padding-block-end: 0.4rem;
+        transition: border-bottom 0s;
+
+      &:hover {
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          border-bottom: 2px dotted var(--semantic-blue-default-hover);
+          animation: animateBorder 1s linear;
+          transition: width 2s linear;
+        }
+      }
+
+      @keyframes animateBorder {
+        0% {
+          width: 0;
+        }
+        100% {
+          width: 100%;
+        }
+      }
+    }
+    .events {
+      margin-block-end: 1.2rem;
+      display: inline-flex;
+      column-gap: 0.2rem;
+      align-items: center;
+      background-color: #f4f4f5;
+      padding: 0.4rem 0.8rem;
+      border-radius: 2px;
+      a {
+        font-family: "manrope-medium", sans-serif;
+        font-size: 0.8rem;
+      }
+    }
+    .button-primary {
+    @include button();
+    @include button-primary();
+  }
+    .button-secondary {
+      @include button();
+      @include button-secondary();
+    }
+  </style>
+</html>
