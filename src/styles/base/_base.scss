@@ -10,7 +10,7 @@
   --p: 1rem;
   //--p: clamp(1.125rem, 1.0893rem + 0.1786vi, 1rem);
   --subheading: clamp(1rem, 0.9286rem + 0.3571vi, 1.25rem);
-  --letter-spacing: clamp(-0.25rem, -0.0815rem + -0.2174vi, -0.125rem);
+  --letter-spacing: clamp(-0.125rem, -0.0815rem + -0.2174vi, -0.125rem);
 
   /*COLORS*/
 
@@ -133,10 +133,6 @@ html {
 a {
   text-decoration: none;
   cursor: pointer;
-
-  @include on-event {
-    transition: all 0.4s ease-in-out;
-  }
 }
 
 /**
@@ -168,7 +164,7 @@ button {
 
 details {
   padding: 1rem;
-  font-family: 'manrope-bold', sans-serif;
+  font-family: 'avenir-heavy', sans-serif;
 
   &[open] {
     height: auto;
@@ -187,7 +183,7 @@ summary {
   font-weight: 700;
   font-size: 1.2rem;
   border-radius: 1rem;
-  font-family: 'manrope-bold', sans-serif;
+  font-family: 'avenir-heavy', sans-serif;
   letter-spacing: -1px;
 
 
