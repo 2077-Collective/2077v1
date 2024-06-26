@@ -31,6 +31,8 @@ const { Content } = await post.render();
 
 <Layout title={post.data.title}>
   <Main>
+    <div class="content">
+      
     <H1 text={post.data.title} />
 
     <section class="article_image">
@@ -52,11 +54,16 @@ const { Content } = await post.render();
     <section>
       <Footer />
     </section>
+    </div>
   </Main>
 
   <style lang="scss">
+    .content {
+      margin-block-start: 8rem;
+    }
     .article_image {
-      margin-block: 4rem;
+      margin-block-start: 2rem;
+      margin-block-end: 4rem;
       display: flex;
       justify-content: center;
     }

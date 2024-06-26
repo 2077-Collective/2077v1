@@ -25,15 +25,16 @@ const formattedDate = new Intl.DateTimeFormat('en-US', {
       class="rounded-2xl"
     />
   </a>
-  <p class="tag">
+  <a href="" class="tag">
     {post.data.categories}
-  </p>
-  <a href={`/blog/${post.slug}`} class="text-4xl">
-    <h2>{post.data.title}</h2>
+  </a>
+  <a href={`/blog/${post.slug}`} class="heading">
+    <h4>{post.data.title}</h4>
   </a>
   <p class="time">
-    published on {formattedDate}
+    {formattedDate} - 5min read
   </p>
+  
   <p class="text-zinc-500 line-clamp-2 body">
     {post.body}
   </p>
@@ -41,41 +42,41 @@ const formattedDate = new Intl.DateTimeFormat('en-US', {
 
 <style lang="scss">
   .articles {
-    display: grid;
-    row-gap: 1rem;
-    padding: 2.4rem 1.2rem;
-    background-color: #fafafa;
+    margin-block-end: 8rem;
     border-radius: 4px;
-    box-shadow:
-      0 4px 4px 0 rgba(160, 160, 160, 0.14),
-      0 2px 5px 0 rgba(160, 160, 160, 0.12),
-      0 1px 10px 0 rgba(160, 160, 160, 0.1);
 
     img {
       margin-block-end: 1rem;
-      box-shadow:
-        0 4px 4px 0 rgba(160, 160, 160, 0.14),
-        0 2px 5px 0 rgba(160, 160, 160, 0.12),
-        0 1px 10px 0 rgba(160, 160, 160, 0.1);
+      border-radius: 8px;
     }
 
     .tag {
       font-family: "avenir-heavy", sans-serif;
       font-weight: normal;
-      font-size: 1rem;
+      font-size: .85rem;
+      text-transform: capitalize;
+      //border: 1px solid var(--neutral-ink-light-hover);
       letter-spacing: -0.6px;
-      color: var(--semantic-blue-default-hover);
+      color: var(--semantic-green-dark-hover);
+    }
+
+    .heading {
+      text-transform: capitalize;
     }
 
     .time {
       margin-block: 0.5rem;
       color: var(--leather-dark-hover);
-      margin-block-end: 1.2rem;
+      font-size: .8rem;
     }
 
     h3 {
       margin-block-start: 1.2rem;
       margin-block-end: 1.2rem;
+    }
+
+    h4 {
+      font-weight: 600;
     }
 
     h2 {
@@ -88,7 +89,8 @@ const formattedDate = new Intl.DateTimeFormat('en-US', {
       overflow: hidden;
       display: -webkit-box;
       -webkit-box-orient: vertical;
-      -webkit-line-clamp: 4;
+      -webkit-line-clamp: 2;
+      font-size: .85rem;
     }
   }
 </style>
