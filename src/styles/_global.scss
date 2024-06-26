@@ -1,0 +1,107 @@
+:root {
+    --color-dark: #252525;
+    --color-light: #efefef;
+    --color-primary: rgb(97, 172, 27);
+    --size-step-0: clamp(1rem, calc(0.96rem + 0.22vw), 1.13rem);
+    --size-step-1: clamp(1.25rem, calc(1.16rem + 0.43vw), 1.5rem);
+    --size-step-2: clamp(1.56rem, calc(1.41rem + 0.76vw), 2rem);
+    --size-step-3: clamp(1.95rem, calc(1.71rem + 1.24vw), 2.66rem);
+    --size-step-4: clamp(2.44rem, calc(2.05rem + 1.93vw), 3.55rem);
+  }
+  
+  body {
+      background: var(--color-light);
+      color: var(--color-dark);
+      padding: 2em;
+      font-family: 'avenir-book', sans-serif;
+      font-size: var(--size-step-0);
+      line-height: 1.7;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    font-family: 'avenir-heavy';
+    font-weight: 800;
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+  
+  h1 {
+      font-size: var(--size-step-4);
+  }
+    
+    
+  h2 {
+      font-size: var(--size-step-3);
+  }
+    
+  h3 {
+      font-size: var(--size-step-2);
+  }
+  
+  p, code, a, span, ul, li {
+    font-family: 'avenir-roman';
+  }
+
+  ul,
+  ol {
+      padding-inline-start: 1em;
+  }
+  
+  li::marker {
+    color: var(--color-primary);
+  }
+  
+  article {
+    max-width: 80ch;
+    margin-inline: auto;
+  }
+    
+  blockquote {
+      padding-inline-start: 1em;
+      border-inline-start: 0.3em solid;
+      border-inline-start-color: var(--color-primary);
+      font-style: italic;
+      font-size: var(--size-step-1);
+      max-width: 50ch;
+  }
+  
+  .flow > * + * {
+      margin-block-start: var(--flow-space, 1em);
+  }
+  
+  .flow > h1 {
+    max-width: 24ch;
+  }
+  
+  .flow > h2,
+  .flow > h3 {
+    max-width: 28ch;
+  }
+  
+  :is(h1, h2, h3, blockquote) {
+      --flow-space: 1.5em;
+  }
+    
+  :is(h1, h2, h3) + * {
+      --flow-space: 0.5em;
+  }
+  
+  a {
+    color: currentColor;
+    text-decoration-color: var(--color-primary);
+    text-decoration-thickness: 0.3ex;
+    text-underline-offset: 0.3ex;
+  }
+  
+  .lede {
+    font-size: var(--size-step-1);
+    font-style: italic;
+    max-width: 50ch;
+    text-wrap: balance;
+  }
+  
+  .lede + * {
+    --flow-space: 2em;
+  }

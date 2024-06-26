@@ -39,10 +39,21 @@ import MobileMenu from "../components/MobileMenu.astro";
 <div class="navigation_mobile"><MobileMenu text="Join" /></div>
 
 <style lang="scss" is:global>
+
   header {
-    margin-block-end: 2rem;
+    margin-block: 1.6rem;
     padding-block: 1.6rem;
     border-bottom: 0.5px solid rgb(229, 227, 227);
+    position: fixed;
+    width: 70%;
+    background-color: rgba(255, 255, 255, 0.4);
+    fill-opacity: 40%;
+    border-radius: 200px;
+    z-index: 100;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: 0 auto;
+    left: 50%;
+    transform: translate(-50%);
 
     a {
       font-family: "avenir-medium", sans-serif;
@@ -90,6 +101,10 @@ import MobileMenu from "../components/MobileMenu.astro";
           display: flex;
         }
       }
+    }
+
+    .community {
+      border-radius: 70px;
     }
   }
 </style>

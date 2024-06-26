@@ -26,17 +26,25 @@ const latestPosts = sortedPosts.slice(0, 3);
         <a href="">Upcoming community event&nbsp;&nbsp;</a>
         <img src="/arrow.svg" alt="" width="16" height="16" />
       </div>
-      <H1
-        text="The Ethereum community for creatives growing decentralised projects"
-      />
-      <p class="hero_subheading">
-        Explore Ethereum with the best community for web3. Interacting with
-        crypto has never been so simple.
-      </p>
-      <div class="hero_cta">
-        <a href="/community"  class="button-primary">Join Community</a>
-        <a href="/blog"  class="button-secondary">get started here</a>
+      <div class="hero_top">
+        <div class="hero_heading">
+          <H1
+          text="The Ethereum community for creatives growing decentralised projects"
+        />
+        <p class="hero_subheading">
+          Explore Ethereum with the best community for web3. Interacting with
+          crypto has never been so simple.
+        </p>
+        <div class="hero_cta">
+          <a href="/community"  class="button-primary">Join Community</a>
+        </div>
+        </div>
+  
+        <div class="hero_image">
+          <img src="/eth.webp" alt="">
+        </div> 
       </div>
+      
       <div class="hero_partners">
         <div class="container">
           <h2 class="">Partners and Sponsors</h2>
@@ -422,30 +430,53 @@ const latestPosts = sortedPosts.slice(0, 3);
 </Layout>
 
 <style lang="scss">
-  .hero {
-    text-align: center;
-    margin-block-end: 8rem;
 
-    &_subheading {
+.events {
+    margin-block-end: 3.2rem;
+    width: fit-content;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    -moz-column-gap: .2rem;
+    column-gap: .2rem;
+    align-items: center;
+    border: 1.2px solid var(--color-primary);
+    
+    padding: .4rem .8rem;
+    border-radius: 4px;
+}
+  .hero {
+    margin-block-end: 8rem;
+    padding-block-start: 8rem;
+
+    &_top {
+      display: grid;
+      justify-content: center;
+    }
+    &_heading {
+    display: grid;
+    justify-content: center;
+    margin-block-end: 4rem;
+    }
+
+    &_image {
+      display: grid;
+    justify-content: center;
+      margin-block-end: 2.4rem;
+    }
+
+    &_subheading {    
       max-width: 32rem;
-      margin: auto;
+      margin-right: auto;
       font-size: var(--subheading);
       margin-block-start: 1.2rem;
       margin-block-end: 2rem;
     }
-
     &_cta {
-      display: inline-grid;
-      row-gap: 1.2rem;
-      justify-content: center;
       align-items: center;
       column-gap: 1.2rem;
-      padding: 2rem 1.2rem;
-      border: 2px dotted rgb(196, 195, 195);
-      border-radius: 0.8rem;
-      margin-block-end: 4rem;
+      margin-block-start: 1rem
     }
-
     &_partners {
       background-color: #111827;
 
@@ -481,9 +512,7 @@ const latestPosts = sortedPosts.slice(0, 3);
     }
 
     @media only screen and (min-width: 640px) and (-webkit-min-device-pixel-ratio: 1) {
-      &_cta {
-        display: inline-flex;
-      }
+      
       &_partners {
         background-color: #111827;
 
@@ -500,6 +529,12 @@ const latestPosts = sortedPosts.slice(0, 3);
       }
     }
     @media only screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+      
+    &_top {
+      display: flex;
+      justify-content: center;
+      column-gap: 2rem;
+    }
       &_partners {
         .container {
           padding-block: 4rem;

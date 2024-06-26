@@ -23,7 +23,7 @@
 
 /***PRIMARY BUTTON****/
 @mixin button-primary {
-  background-color: var(--semantic-blue-default-hover);
+  background-color: var(--semantic-green-default-normal);
   color: var(--leather-default-normal);
   transition: background 0.15s ease-out, transform 0.1s ease-out, box-shadow 0.15s ease-out;
 
